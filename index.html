@@ -26,7 +26,6 @@
     cursor: default;
   }
 
-  /* ── NOISE OVERLAY ── */
   body::before {
     content: '';
     position: fixed; inset: 0; z-index: 0;
@@ -35,7 +34,6 @@
     opacity: 0.45;
   }
 
-  /* ── RADIAL GLOW BEHIND SANDWICH ── */
   .glow {
     position: absolute;
     top: 50%; left: 50%;
@@ -49,10 +47,9 @@
 
   @keyframes pulse {
     0%, 100% { opacity: 0.7; transform: translate(-50%,-50%) scale(1); }
-    50%       { opacity: 1;   transform: translate(-50%,-50%) scale(1.06); }
+    50% { opacity: 1; transform: translate(-50%,-50%) scale(1.06); }
   }
 
-  /* ── HEADER BAR ── */
   header {
     position: relative; z-index: 10;
     display: flex; align-items: center; justify-content: space-between;
@@ -81,10 +78,9 @@
 
   @keyframes fadeDown {
     from { opacity: 0; transform: translateY(-16px); }
-    to   { opacity: 1; transform: translateY(0); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── MAIN STAGE ── */
   .stage {
     position: relative;
     min-height: calc(100vh - 80px);
@@ -96,7 +92,6 @@
     overflow: hidden;
   }
 
-  /* Horizontal scan line */
   .stage::after {
     content: '';
     position: absolute;
@@ -107,7 +102,6 @@
     pointer-events: none;
   }
 
-  /* ── HEADLINE ── */
   .headline {
     position: relative; z-index: 5;
     text-align: center;
@@ -140,7 +134,6 @@
     -webkit-text-stroke: 0px;
   }
 
-  /* ── SANDWICH CONTAINER ── */
   .sandwich-wrap {
     position: relative; z-index: 10;
     width: min(820px, 100%);
@@ -152,7 +145,7 @@
 
   @keyframes floatIn {
     from { opacity: 0; transform: scale(0.88) translateY(40px); }
-    to   { opacity: 1; transform: scale(1) translateY(0); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
   }
 
   .sandwich-img {
@@ -167,10 +160,9 @@
 
   @keyframes float {
     0%, 100% { transform: translateY(0) rotate(-1.5deg); }
-    50%       { transform: translateY(-14px) rotate(-1deg); }
+    50% { transform: translateY(-14px) rotate(-1deg); }
   }
 
-  /* ── INGREDIENT CALLOUTS ── */
   .callouts {
     position: absolute; inset: 0; z-index: 20;
     pointer-events: none;
@@ -196,7 +188,7 @@
 
   @keyframes dotPulse {
     0%, 100% { box-shadow: 0 0 0 3px rgba(212,149,42,0.2); }
-    50%       { box-shadow: 0 0 0 6px rgba(212,149,42,0.08); }
+    50% { box-shadow: 0 0 0 6px rgba(212,149,42,0.08); }
   }
 
   .callout-line {
@@ -214,11 +206,9 @@
     white-space: nowrap;
   }
 
-  /* Left callouts – line goes right, text on right */
   .callout.left { flex-direction: row; }
   .callout.left .callout-line { width: 48px; }
 
-  /* Right callouts – reversed */
   .callout.right { flex-direction: row-reverse; }
   .callout.right .callout-line {
     width: 48px;
@@ -226,16 +216,14 @@
   }
   .callout.right .callout-text { text-align: right; }
 
-  /* Specific positions — tuned to the sandwich image */
-  .c1  { top: 18%; left: 2%;  animation-delay: 0.4s; }
-  .c2  { top: 38%; left: 0%;  animation-delay: 0.55s; }
-  .c3  { top: 60%; left: 1%;  animation-delay: 0.7s; }
-  .c4  { top: 78%; left: 4%;  animation-delay: 0.85s; }
-  .c5  { top: 20%; right: 2%; animation-delay: 0.5s; }
-  .c6  { top: 40%; right: 0%; animation-delay: 0.65s; }
-  .c7  { top: 62%; right: 1%; animation-delay: 0.8s; }
+  .c1 { top: 18%; left: 2%; animation-delay: 0.4s; }
+  .c2 { top: 38%; left: 0%; animation-delay: 0.55s; }
+  .c3 { top: 60%; left: 1%; animation-delay: 0.7s; }
+  .c4 { top: 78%; left: 4%; animation-delay: 0.85s; }
+  .c5 { top: 20%; right: 2%; animation-delay: 0.5s; }
+  .c6 { top: 40%; right: 0%; animation-delay: 0.65s; }
+  .c7 { top: 62%; right: 1%; animation-delay: 0.8s; }
 
-  /* ── BOTTOM INFO BAR ── */
   .info-bar {
     position: relative; z-index: 10;
     width: 100%;
@@ -279,7 +267,6 @@
     color: var(--gold-light);
   }
 
-  /* ── CTA ── */
   .cta-row {
     position: relative; z-index: 10;
     display: flex;
@@ -314,7 +301,6 @@
   }
   .cta-btn.ghost:hover { border-color: var(--gold); color: var(--gold-light); }
 
-  /* ── FOOTER STRIP ── */
   .footer-strip {
     position: relative; z-index: 10;
     border-top: 1px solid rgba(212,149,42,0.1);
@@ -338,10 +324,9 @@
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(18px); }
-    to   { opacity: 1; transform: translateY(0); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
     header { padding: 1.2rem 1.5rem; }
     .headline h1 { font-size: clamp(3.5rem, 18vw, 6rem); }
@@ -364,13 +349,11 @@
 <main class="stage">
   <div class="glow"></div>
 
-  <!-- Headline -->
   <div class="headline">
     <span class="headline-eyebrow">Handcrafted · Premium</span>
     <h1>The <em>Big</em><br>One</h1>
   </div>
 
-  <!-- Sandwich + callouts -->
   <div class="sandwich-wrap">
     <div class="callouts">
       <div class="callout left c1">
@@ -412,12 +395,11 @@
 
     <img
       class="sandwich-img"
-      src="/mnt/user-data/uploads/WhatsApp_Image_2026-05-02_at_20_47_53.jpeg"
-      alt="BBQ Chicken Sub – The Big One"
+      src="assets/the-sub-signature.jpeg"
+      alt="BBQ Chicken Sub - The Big One"
     />
   </div>
 
-  <!-- Info bar -->
   <div class="info-bar">
     <div class="info-item">
       <span class="info-label">Länge</span>
@@ -435,12 +417,10 @@
     </div>
   </div>
 
-  <!-- CTA -->
   <div class="cta-row">
     <a href="#" class="cta-btn primary">Jetzt bestellen</a>
     <a href="#" class="cta-btn ghost">Speisekarte</a>
   </div>
-
 </main>
 
 <footer class="footer-strip">
